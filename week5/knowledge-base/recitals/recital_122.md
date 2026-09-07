@@ -1,0 +1,33 @@
+# Recital 122
+
+## Source
+
+Regulation (EU) 2024/1689 - Artificial Intelligence Act
+
+## Official text
+
+(122)	It is appropriate that, without prejudice to the use of harmonised 
+standards and common specifications, providers of a high-risk AI 
+system that has been trained and tested on data reflecting the specific 
+geographical, behavioural, contextual or functional setting within which 
+the AI system is intended to be used, should be presumed to comply 
+with the relevant measure provided for under the requirement on data 
+governance set out in this Regulation. Without prejudice to the 
+(41)	 Regulation (EU) No 1025/2012 of the European Parliament and of the Council of 25 October 
+2012 on European standardisation, amending Council Directives 89/686/EEC and 93/15/
+EEC and Directives 94/9/EC, 94/25/EC, 95/16/EC, 97/23/EC, 98/34/EC, 2004/22/EC, 
+2007/23/EC, 2009/23/EC and 2009/105/EC of the European Parliament and of the Council 
+and repealing Council Decision 87/95/EEC and Decision No 1673/2006/EC of the European 
+Parliament and of the Council (OJ L 316, 14.11.2012, p. 12).
+
+requirements related to robustness and accuracy set out in this 
+Regulation, in accordance with Article 54(3) of Regulation (EU) 2019/881, 
+high-risk AI systems that have been certified or for which a statement 
+of conformity has been issued under a cybersecurity scheme pursuant 
+to that Regulation and the references of which have been published in 
+the Official Journal of the European Union should be presumed to 
+comply with the cybersecurity requirement of this Regulation in so far 
+as the cybersecurity certificate or statement of conformity or parts 
+thereof cover the cybersecurity requirement of this Regulation. This 
+remains without prejudice to the voluntary nature of that cybersecurity 
+scheme.

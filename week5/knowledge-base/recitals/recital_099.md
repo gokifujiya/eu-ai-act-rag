@@ -1,0 +1,12 @@
+# Recital 99
+
+## Source
+
+Regulation (EU) 2024/1689 - Artificial Intelligence Act
+
+## Official text
+
+(99)	 Large generative AI models are a typical example for a general-purpose 
+AI model, given that they allow for flexible generation of content, such 
+as in the form of text, audio, images or video, that can readily 
+accommodate a wide range of distinctive tasks.
