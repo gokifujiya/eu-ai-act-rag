@@ -43,7 +43,12 @@ def get_color(value: float, metric_type: str) -> str:
             return "orange"
         else:
             return "red"
-    elif metric_type in ["accuracy", "completeness", "relevance"]:
+    elif metric_type in [
+        "accuracy",
+        "completeness",
+        "relevance",
+        "legal_source_accuracy",
+    ]:
         if value >= ANSWER_GREEN:
             return "green"
         elif value >= ANSWER_AMBER:
@@ -128,6 +133,7 @@ def run_answer_evaluation(progress=gr.Progress()):
     total_accuracy = 0.0
     total_completeness = 0.0
     total_relevance = 0.0
+    total_legal_source_accuracy = 0.0
     category_accuracy = defaultdict(list)
     count = 0
 
@@ -136,6 +142,7 @@ def run_answer_evaluation(progress=gr.Progress()):
         total_accuracy += result.accuracy
         total_completeness += result.completeness
         total_relevance += result.relevance
+        total_legal_source_accuracy += result.legal_source_accuracy
 
         category_accuracy[test.category].append(result.accuracy)
 
@@ -146,6 +153,7 @@ def run_answer_evaluation(progress=gr.Progress()):
     avg_accuracy = total_accuracy / count
     avg_completeness = total_completeness / count
     avg_relevance = total_relevance / count
+    avg_legal_source_accuracy = total_legal_source_accuracy / count
 
     # Create final summary metrics HTML
     final_html = f"""
@@ -153,6 +161,12 @@ def run_answer_evaluation(progress=gr.Progress()):
         {format_metric_html("Accuracy", avg_accuracy, "accuracy", score_format=True)}
         {format_metric_html("Completeness", avg_completeness, "completeness", score_format=True)}
         {format_metric_html("Relevance", avg_relevance, "relevance", score_format=True)}
+        {format_metric_html(
+            "Legal Source Accuracy",
+            avg_legal_source_accuracy,
+            "legal_source_accuracy",
+            score_format=True
+        )}
         <div style="margin-top: 20px; padding: 10px; background-color: #d4edda; border-radius: 5px; text-align: center; border: 1px solid #c3e6cb;">
             <span style="font-size: 14px; color: #155724; font-weight: bold;">✓ Evaluation Complete: {count} tests</span>
         </div>
@@ -176,7 +190,7 @@ def main():
 
     with gr.Blocks(title="RAG Evaluation Dashboard", theme=theme) as app:
         gr.Markdown("# 📊 RAG Evaluation Dashboard")
-        gr.Markdown("Evaluate retrieval and answer quality for the Insurellm RAG system")
+        gr.Markdown("Evaluate retrieval and answer quality for the EU AI Act RAG system")
 
         # RETRIEVAL SECTION
         gr.Markdown("## 🔍 Retrieval Evaluation")

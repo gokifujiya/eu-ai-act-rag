@@ -7,7 +7,7 @@ load_dotenv(override=True)
 
 
 def format_context(context):
-    result = "<h2 style='color: #ff7800;'>Relevant Context</h2>\n\n"
+    result = "<h2 style='color: #ff7800;'>Retrieved EU AI Act Context</h2>\n\n"
     for doc in context:
         result += f"<span style='color: #ff7800;'>Source: {doc.metadata['source']}</span>\n\n"
         result += doc.page_content + "\n\n"
@@ -28,8 +28,11 @@ def main():
 
     theme = gr.themes.Soft(font=["Inter", "system-ui", "sans-serif"])
 
-    with gr.Blocks(title="Insurellm Expert Assistant", theme=theme) as ui:
-        gr.Markdown("# 🏢 Insurellm Expert Assistant\nAsk me anything about Insurellm!")
+    with gr.Blocks(title="EU AI Act RAG Assistant", theme=theme) as ui:
+        gr.Markdown(
+            "# EU AI Act RAG Assistant\n"
+            "Ask questions about Regulation (EU) 2024/1689."
+        )
 
         with gr.Row():
             with gr.Column(scale=1):
@@ -38,7 +41,7 @@ def main():
                 )
                 message = gr.Textbox(
                     label="Your Question",
-                    placeholder="Ask anything about Insurellm...",
+                    placeholder="Ask anything about the EU AI Act...",
                     show_label=False,
                 )
 
