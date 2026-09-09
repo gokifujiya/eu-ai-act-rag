@@ -111,6 +111,20 @@ flat dense retrieval.
 Planned improvements include provision-aware retrieval, hybrid retrieval,
 reranking, and legal structure-aware chunking.
 
+## Acknowledgments
+
+This project was developed in part from the RAG implementation introduced in
+[Ed Donner's LLM Engineering repository](https://github.com/ed-donner/llm_engineering).
+
+The original course repository is licensed under the MIT License. This project
+adapts and extends that implementation for EU AI Act legal retrieval, including
+a structured legal knowledge base, provision-aware metadata, direct legal
+provision lookup, legal-source references, EU AI Act-specific evaluation, and
+a customized Gradio interface.
+
+See [THIRD_PARTY_LICENSES.md](THIRD_PARTY_LICENSES.md) for the applicable
+third-party license notice.
+
 ## Disclaimer
 
 This project is for research and educational purposes only and does not provide
