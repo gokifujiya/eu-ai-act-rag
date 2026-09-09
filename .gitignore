@@ -187,6 +187,7 @@ week4/simple
 WingIDE_Projekti/
 nohup.out
 *.png
+!assets/eu-ai-act-rag-demo.png
 
 scraper_cache/
 challenge/

@@ -31,7 +31,7 @@ def main():
     with gr.Blocks(title="EU AI Act RAG Assistant", theme=theme) as ui:
         gr.Markdown(
             "# EU AI Act RAG Assistant\n"
-            "Ask questions about Regulation (EU) 2024/1689."
+            "Ask questions about Regulation (EU) 2024/1689.\n\n"
         )
 
         with gr.Row():
