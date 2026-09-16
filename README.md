@@ -26,6 +26,7 @@ OpenAI language model   Retrieved context viewer
       │
       ▼
 Answer with legal-source references
+```
 
 ## Usage
 
