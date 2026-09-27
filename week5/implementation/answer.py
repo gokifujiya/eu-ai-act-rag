@@ -1,6 +1,7 @@
 import re
 from pathlib import Path
 
+from dotenv import load_dotenv
 from langchain_openai import ChatOpenAI
 from langchain_chroma import Chroma
 from langchain_huggingface import HuggingFaceEmbeddings
@@ -10,14 +11,15 @@ from langchain_core.messages import (
     convert_to_messages,
 )
 from langchain_core.documents import Document
-from dotenv import load_dotenv
 
 
-load_dotenv(override=True)
+BASE_DIR = Path(__file__).resolve().parent.parent
+PROJECT_ROOT = BASE_DIR.parent
+
+load_dotenv(PROJECT_ROOT / ".env")
 
 MODEL = "gpt-4.1-nano"
 
-BASE_DIR = Path(__file__).parent.parent
 DB_NAME = str(BASE_DIR / "vector_db")
 KNOWLEDGE_BASE = BASE_DIR / "knowledge-base"
 

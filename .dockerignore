@@ -1,0 +1,28 @@
+# Git
+.git
+.gitignore
+
+# Local environment
+.env
+.venv
+venv
+
+# Python cache
+__pycache__
+*.py[cod]
+.pytest_cache
+
+# Jupyter
+.ipynb_checkpoints
+
+# IDE
+.vscode
+.idea
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Local logs / temporary files
+*.log
+*.tmp

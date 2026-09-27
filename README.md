@@ -11,6 +11,11 @@ The project uses the official text of the EU AI Act, structured into Articles, R
 User question
       │
       ▼
+EU AI Act scope check
+      │
+      ├── Outside scope ──► Reject question
+      │
+      ▼
 Hugging Face MiniLM embeddings
       │
       ▼
@@ -28,6 +33,10 @@ OpenAI language model   Retrieved context viewer
 Answer with legal-source references
 ```
 
+The application can run locally or inside a Docker container. Docker provides a
+reproducible runtime environment for the Gradio interface and RAG pipeline, while
+the OpenAI API key is supplied separately at runtime.
+
 ## Usage
 
 You can ask natural-language questions about the EU AI Act, for example:
@@ -42,6 +51,19 @@ For precise provision lookup, you can also query a specific legal provision dire
 - `Article 50?`
 - `Annex I?`
 - `Recital 47?`
+
+### Scope restriction
+
+The application is intentionally restricted to questions about the EU AI Act.
+Clearly unrelated questions are rejected before the normal RAG workflow.
+
+For example:
+
+- `What duties does a product manufacturer have?` → processed by the EU AI Act RAG.
+- `What is the capital of Japan?` → rejected as outside the supported scope.
+
+This prevents the application from functioning as an unrestricted general-purpose
+chatbot and keeps retrieval and generation focused on the legal knowledge base.
 
 ## Demo
 
@@ -103,6 +125,39 @@ port, such as `7861`.
 
 The application uses the shared RAG implementation in
 `week5/implementation/answer.py`, ensuring that the interactive application and the evaluation pipeline use the same retrieval and answer-generation logic.
+
+## Docker
+
+The application can also be run in a Docker container, providing a reproducible
+environment for the Gradio interface, retrieval pipeline, and evidence-highlighting
+functionality.
+
+Build the Docker image from the project root:
+
+```powershell
+docker build -t eu-ai-act-rag .
+```
+
+Create a local `.env` file containing your OpenAI API key:
+
+```text
+OPENAI_API_KEY=your_api_key
+```
+
+Run the container:
+
+```powershell
+docker run --rm -p 7860:7860 --env-file .env eu-ai-act-rag
+```
+
+Then open:
+
+```text
+http://127.0.0.1:7860
+```
+
+The `.env` file is excluded from version control. The OpenAI API key is supplied
+at runtime and is not stored in the Docker image.
 
 ## Knowledge Base
 
